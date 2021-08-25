@@ -9,10 +9,15 @@ function App() {
     { date: new Date(2020, 8, 22), title: "Car Policy", amount: 208.89 },
     { date: new Date(2021, 2, 22), title: "Car Agency", amount: 227.95 },
   ];
+
+  const onAddExpenseHandler = (addedExpenseData) => {
+    console.log('In App.js');
+    console.log(addedExpenseData);
+  }
   return (
     <div>
       <h2>Let's get started!</h2>
-      <NewExpense/>
+      <NewExpense onAddExpense={onAddExpenseHandler}/>
       <Expenses expenses={expenses}></Expenses>
     </div>
   );
